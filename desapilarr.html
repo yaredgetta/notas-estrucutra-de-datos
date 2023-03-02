@@ -1,0 +1,231 @@
+<html>
+<title>hola</title>
+<style>
+#QAQ{
+    background-color: antiquewhite;
+    color: black;
+    height: 300px;
+    width: 300px;
+}
+#QAQ2{
+    background-color: blueviolet;
+    color: aquamarine;
+    height: 200px;
+    width: 200px;
+}
+</style>
+<body bgcolor="cyan">
+<font color="red">
+<marquee behavior="alternate"><h1>COSAS QUE VEO EN ESTRUCTURA DE DATOS </h1></marquee>
+<marquee behavior="alternate" direction="right"><h2>MI PILA MAMALONA</h2></marquee>
+</font>
+<br>
+private:
+<br>
+unsigned tam;
+<br>
+struct Elemento{
+<br>
+Elemtento(int v, Elemento *sig + null);
+<br>
+int valor;
+<br>
+Elemento *siguiente;
+<br>
+}*tope;
+<hr>
+<br>
+Pila::Pila(): tope(null){
+<br>
+void Pila::desapilar()
+<br>
+{
+<br>
+if(esta vacia())throw PilaVacia();
+<br>
+Elemento *porBorrar= tope;
+<br>
+tope=porBorrar -> siguiente;
+<br>
+delete porBorrar;
+<br>
+}
+<hr>
+<br>
+Elemento *aux=tope;
+<br>
+int tam=0;
+<br>
+while(aux!=NULL){
+<br>
+++tam;
+<br>
+aux=aux->siguiente;
+<br>
+}return tam;
+<hr>
+<br>
+Apilar
+<br>
+Elemento *nuevo=new Elemento(valor, tope);
+<br>
+tope = nuevo;
+<br>
+++tam;
+<hr>
+<br>
+Esta vacia
+<br>
+return tope==NULL;
+<hr>
+<br>
+borrar
+<br>
+Elemento *aux;
+<br>
+while(tope!=NULL){
+<br>
+//for(int i=0; i<tan;++i){
+<br>
+aux=tope;
+<br>
+tope=aux->siguiente;
+<br>
+delete aux;
+<br>
+}
+<br>
+este es mejor //while(!EstaVacia())Desapilar();
+<hr>
+<br>
+constructor de copias
+<br>
+Pila::Pila(const Pila &p): tam(0), tope(NULL)
+<br>
+{
+<br>
+*this=p;
+<br>
+}
+<hr>
+vaciar la pila que apunta this creamos un arreglo dinamico al tamano de la pila de arriba
+<br>
+recorremos con un for y luego de manera inversa tam-1 y apilamos en la nueva pila 
+<br>
+pila=new pila;
+<br>
+<hr>
+operador igual
+<br>
+<div id="QAQ">
+template<typename T>
+<br>
+Pila<T>& Pila<T>::operator=(const Pila<T>& otra) {
+<br>
+    if (this != &otra)
+<br>
+    VaciaR();
+    <br>	
+    Pila pilaaux;
+    <br>
+    Elemento *aux = p.tope;
+    <br>
+    while(aux!=NULL){
+    <br>
+        pilaAux.Apilar(aux->valor);
+ 	<br>
+        aux=aux->siguiente;
+    <br>
+    }
+    <br>
+    while(!pilaaux.EstaVacia()){
+    <br>
+        Apilar(pilaaux.tope());
+	<br>
+        pilaaux.Desapilar(); 	    
+    <br>
+    }
+    <br>
+    return *this;
+}
+
+</div>
+<hr>
+<div id="QAQ2">
+<h3>notacion polaca</h3>
+a+b infija
+<br>
++ab prefija polaca
+<br>
+ba+ posfija (polaca inversa)
+<br>
+a+b*b == abc*+
+<br>
+(a+b)*c == ab+c*
+<br>
+a+b/(c*d+e) == abcd*e+/+ == ejemplo con numeros 1 2 3 4 * 5 + / +
+</div>
+tarea  
+pila con notacion polaca inversa con numeros reales  
+que este bien escrita
+tranfarmala con notacion polaca inversa
+y evaluar 
+
+c_str
+
+//leer  
+
+ideas de como hacer esto pero bien hecho
+
+1 tener un template lo cual me ayudara para definir cualquier tipo de pila que quiero hacer 
+2 definir una pila la cual va a evaluar las operaciones que quiero hacer esta es de caracteres
+3 pila que va a hacer las operaciones 
+<hr>
+a+b*c
+leer la expresion y si hay un operando lo ponemos en posfijo
+si hay un operador lo metemos a la pila 
+leer otro operando los metemos a al posfijo 
+otor operador miro que hay en la pila evaluo y digo cual es mas precedente 
+otro operando lo metemos en la expresion posfijo 
+sacamos los operadores y lo ponemos en  la expresion posfijo
+
+otro
+<br>
+
+<h4>(a+b)*c</h4>
+<ul>
+
+<li>leer un parentesis ( abierto lo metemos a la pila</li> 
+<li>leer un operando lo metemos en la expresion posfijo</li>
+<li>leer un operador + lo metemos a la Pila</li>
+<li>leer un operando lo metemos a la expresion posfija</li>
+<li>leer una parentesis )  cerrado sacamos los operadores que estan hasta el parentesis ( y los metemos a la expresion posfija</li>
+<li>leer un operador * lo metemos a la Pila</li>
+<li>leer un operando lo metemos a la expresion posfija</li> 
+<li>sacamos el * ya que es el ultimo operador de la pila lo ponemos en la expresion posfija</li> 
+</ul>
+quedria que (a+b)*c == ab+c* 
+<br>
+<br>
+a-b*(c+d)/e == abcd+*e/-
+
+
+encotrne a lo pasmaos a la expresion
+leer operador - lo metemos a la Pila
+leer operando a la expresion
+leer operador * evaluo la prioridad y metemos a la Pila
+leer parentesis ( meter a la Pila
+leer operando a la expresion
+leer operador + a la pila 
+leer operando a la expresion 
+leer parentesis ) sacar todo lo que tenia en el parentesis y metelos ala expresion el + 
+leer operador / sacamos * por se igual prioridad y meter a lpila despues
+leer operando meter a la expresion 
+sacar lo demas de la pila y lo metemos en la expresion 
+
+otra 
+
+
+
+</body>
+</html>
