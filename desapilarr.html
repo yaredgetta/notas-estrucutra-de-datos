@@ -13,10 +13,19 @@
     height: 200px;
     width: 200px;
 }
+header{
+    padding-top: 60px;
+    width: auto;
+    height: 140px;
+    background-color: black;
+    font-size: 20px;
+}
 </style>
 <body bgcolor="cyan">
 <font color="red">
+    <header>
 <marquee behavior="alternate"><h1>COSAS QUE VEO EN ESTRUCTURA DE DATOS </h1></marquee>
+</header>
 <marquee behavior="alternate" direction="right"><h2>MI PILA MAMALONA</h2></marquee>
 </font>
 <br>
@@ -224,8 +233,56 @@ leer operando meter a la expresion
 sacar lo demas de la pila y lo metemos en la expresion 
 
 otra 
+<hr>
+<h2>Estructura tipo FIFO(First in First Out)</h2>
+desencolar un Elemento
+igual que una pila en desapilar
+encolar 
+buscamos la direccion del ultimo en un puntero aux
+creamos un nuevo elemento que apunta a null
+y metemos nuevo valor
+para conectaro con el auxiliar y que ese apunte al nuevo 
+
+//para meter elementos a la cola 
+void Cola::Encolar(int valor)
+{
+    Elemento *nuevo=new Elemento(valor);
+    Elemento *aux= primero;
+    while(aux->siguiente !=NULL) aux = aux -> siguiente;
+    aux->siguiente = nuevo;
+    ++tam;
+}
+//sin auxilirares meter elementos a la Cola
+void Cola::Encolar(int valor)
+{
+    //si esta vacia primero = ultimo = new Elemento(valor);
+    ultimo->siguiente = new Elemento(valor);
+    ultimo = ultimo -> siguiente; 
+    ++tam;
+}
+//desencolar
+
+
+
+//cola vacia
+primero=nuevo
+Elemento *aux =  primero;
+| while(aux != NULL && aux->siguiente !=NULL) aux =aux->siguiente;
+| if(aux !=NULL) aux->siguiente = new Elemento(valor);
+else primero = new Elemento(valor);
+++tam;
+
+| (aux != NULL ? aux->siguiente:primero)=new Elemento(valor);
+
+<br>
+usar pre y code
+<hr>
+tarea
+<br> 
+template con cola circular
 
 
 
 </body>
 </html>
+	
